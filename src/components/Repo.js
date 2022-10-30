@@ -18,13 +18,16 @@ function Repo() {
 
   return (
     <div className="repos">
-      <h1>List of Repos</h1>
+      <h1 className="repo-header">Repositories</h1>
       <ul className="repo-container">
         {repos?.map((repo, i) => (
           <li key={i} className="repo-card">
-            <h4>{repo.name}</h4>
-            <p>{repo.description}</p>
-            <p>{repo.language}</p>
+            <h4 className="repo-name">{repo.name}</h4>
+            <p className="repo-description">{repo.description}</p>
+            <div className="language">
+              <img src={repo.languages_url} alt="" className="lang-logo" />
+              <p className="repo-lang">{repo.language}</p>
+            </div>
             <div className="date">
               <p>ID:{repo.id}</p>
               <p>{repo.size}Kb</p>
