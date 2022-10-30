@@ -1,22 +1,12 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
+import React from "react";
+import Repo from "./components/Repo";
+import Profile from "./components/Profile";
 
 function App() {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    getUsers();
-  }, []);
-
-  const getUsers = async () => {
-    const api = await fetch("https://api.github.com/users/Oluwasemilogo/repos");
-    const data = await api.json();
-    setUsers(data);
-  };
-  console.log(users);
   return (
     <div className="App">
-      <h1>HELLO WORLD.</h1>
+      <Profile />
+      <Repo />
     </div>
   );
 }
