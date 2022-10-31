@@ -20,6 +20,20 @@ function Profile() {
       <h1 className="profile-name">{profile.name}</h1>
       <h3 className="username">@{profile.login}</h3>
       <p className="bio">{profile.bio}</p>
+      <section className="section">
+        <div className="stat">
+          <p className="profile-figures">{profile.public_repos}</p>
+          <h3 className="profile-details"> Repositories</h3>
+        </div>
+        <div className="stat">
+          <p className="profile-figures">{profile.followers}</p>
+          <h3 className="profile-details"> Followers</h3>
+        </div>
+        <div className="stat">
+          <p className="profile-figures">{profile.following}</p>
+          <h3 className="profile-details">Following</h3>
+        </div>
+      </section>
     </div>
   );
 }
