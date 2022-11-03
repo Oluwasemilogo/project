@@ -1,13 +1,17 @@
 import React from "react";
-import Repo from "./components/Repo";
-import Profile from "./components/Profile";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Data from "./components/Data";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Profile />
-      <Repo />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/repos/:data" element={<Data />}></Route>
+        </Routes>
+      </Router>
     </>
   );
 }

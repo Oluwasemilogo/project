@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import "../App.css";
 
 function Repo() {
@@ -10,29 +12,47 @@ function Repo() {
   }, []);
 
   const getRepos = async () => {
-    const api = await fetch("https://api.github.com/users/Oluwasemilogo/repos");
+    const api = await fetch("https://api.github.com/user/repos", {
+      method: "get",
+      headers: new Headers({
+        Authorization: "Bearer " + "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",
+        "Content-Type": "application/x-www-form-urlencoded",
+      }),
+    });
+
     const data = await api.json();
     setRepos(data);
   };
-  console.log(repos);
+  useEffect(() => {
+    console.log(repos);
+  });
 
   return (
     <div className="repos">
       <h1 className="repo-header">Repositories</h1>
       <ul className="repo-container">
         {repos?.map((repo, i) => (
-          <li key={i} className="repo-card">
-            <h4 className="repo-name">{repo.name}</h4>
-            <p className="repo-description">{repo.description}</p>
-            <div className="language">
-              <img src={repo.languages_url} alt="" className="lang-logo" />
-              <p className="repo-lang">{repo.language}</p>
-            </div>
-            <div className="date">
-              <p>ID:{repo.id}</p>
-              <p>{repo.size}Kb</p>
-            </div>
-          </li>
+          <Link
+            to={`/repos/${repo.name}`}
+            key={i}
+            style={{
+              color: "inherit",
+              textDecoration: "inherit",
+            }}
+          >
+            <li className="repo-card">
+              <h4 className="repo-name">{repo.name}</h4>
+              <p className="repo-description">{repo.description}</p>
+              <div className="language">
+                <img src={repo.languages_url} alt="" className="lang-logo" />
+                <p className="repo-lang">{repo.language}</p>
+              </div>
+              <div className="date">
+                <p>ID:{repo.id}</p>
+                <p>{repo.size}Kb</p>
+              </div>
+            </li>
+          </Link>
         ))}
       </ul>
     </div>
