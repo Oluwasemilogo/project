@@ -140,7 +140,7 @@ body {
   flex-direction: column;
   overflow-y: hidden;
   text-align: center;
-  background-color:#f8f9fa;
+  background-color: #f8f9fa;
 }
 .details-container {
   padding: 3rem;
@@ -150,21 +150,21 @@ body {
   width: 600px;
 }
 
-.details-header{
+.details-header {
   font-size: 28px;
   font-weight: 600;
   margin: 20px 0;
   color: rgb(0, 112, 243);
 }
-.details-name{
-    font-size: 22px;
+.details-name {
+  font-size: 22px;
   font-weight: 500;
   margin: 20px 0;
   color: rgb(0, 112, 243);
   text-transform: capitalize;
 }
-.details-description{
-    font-size: 16px;
+.details-description {
+  font-size: 16px;
   font-weight: 400;
   margin: 20px 0;
   color: rgb(26, 30, 34);
@@ -173,8 +173,8 @@ body {
 .details-language,
 .details-size,
 .details-visibility,
-.details-date{
-     font-size: 15px;
+.details-date {
+  font-size: 15px;
   font-weight: 400;
   margin: 20px 0;
   color: rgb(26, 30, 34);
@@ -200,24 +200,24 @@ body {
   border-radius: 10px;
   width: 80px;
 }
-.error{
+.error {
   margin: 20px 0;
   font-size: 40px;
   font-weight: 800;
 }
-.not-found{
+.not-found {
   margin: 20px 0;
   font-size: 30px;
-  font-weight: 600
+  font-weight: 600;
 }
-.error-container{
+.error-container {
   margin-top: 6rem;
   padding: 5rem;
   text-align: center;
 }
-.error-button{
+.error-button {
   margin: 30px 0;
-   cursor: pointer;
+  cursor: pointer;
   color: white;
   background-color: rgb(0, 112, 243);
   padding: 20px 20px;
@@ -225,7 +225,6 @@ body {
   text-align: center;
   border-radius: 10px;
   width: 200px;
-
 }
 @media screen and (max-width: 700px) {
   .repo-container {
@@ -233,15 +232,18 @@ body {
     flex-direction: column;
   }
   .profile-name {
-  text-align: center;
-}
-.username {
-text-align: center;
-}
-.bio {
-  text-align: center;
-}
-.details-name{
-  font-size: 15px;
-}
+    text-align: center;
+  }
+  .username {
+    text-align: center;
+  }
+  .bio {
+    text-align: center;
+  }
+  .details-name {
+    font-size: 15px;
+  }
+  .repo-card {
+    padding: 1.5rem 0;
+  }
 }
