@@ -14,13 +14,13 @@ function Repo() {
     const reps = await fetch(
       `https://api.github.com/users/Oluwasemilogo/repos?per_page=8&page=${val}`,
       {
-        method: "get",
-        headers: new Headers({
-          Authorization: "Bearer " + "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",
-          "Content-Type": "application/x-www-form-urlencoded",
-          "User-Agent": "request",
-          Accept: "application/vnd.github.v3+json",
-        }),
+        // method: "get",
+        // headers: new Headers({
+        //   Authorization: "Bearer " + "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",
+        //   "Content-Type": "application/x-www-form-urlencoded",
+        //   "User-Agent": "request",
+        //   Accept: "application/vnd.github.v3+json",
+        // }),
       }
     );
     const data = await reps.json();
