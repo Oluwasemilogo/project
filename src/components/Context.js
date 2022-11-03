@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createContext } from "react";
 
-export const DetailsContext = createContext({});
+export const DetailsContext = createContext([]);
 const DetailsProvider = ({ children }) => {
   const [repos, setRepos] = useState([]);
   useEffect(() => {
@@ -14,8 +14,10 @@ const DetailsProvider = ({ children }) => {
       {
         method: "get",
         headers: new Headers({
-          Authorization: "Bearer " + "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",
+          Authorization: "Bearer " + "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",
           "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "request",
+          Accept: "application/vnd.github.v3+json",
         }),
       }
     );

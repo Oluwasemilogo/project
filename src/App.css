@@ -7,6 +7,7 @@
 body {
   font-family: "Inter", sans-serif;
   overflow: scroll;
+  height: 100%;
 }
 .repos {
   /* margin-top: 5rem; */
@@ -29,41 +30,47 @@ body {
   padding-right: 20px;
   background-color: rgb(255, 255, 255);
   list-style: none;
+  height: 253px;
 }
+
 .repo-header {
   text-align: center;
   padding: 1rem;
-  color: rgb(26, 30, 34);
+  color: rgb(0, 112, 243);
+  font-weight: 600;
+  font-size: 25px;
+  border-bottom: 2px dotted;
 }
 .repo-name {
   font-size: 20px;
   font-weight: 700;
-  margin: 20px 0;
-  color: rgb(26, 30, 34);
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  color: rgb(0, 112, 243);
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 .repo-description {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 400;
   margin-bottom: 20px;
+  text-transform: capitalize;
 }
 .repo-lang {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 20px;
 }
-.language {
-  display: flex;
-  gap: 10px;
-}
-.lang-logo {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
-.date {
+.other {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
+}
+.repo-other {
+  font-size: 16px;
+  font-weight: 400;
   margin-bottom: 20px;
 }
 .profile-container {
@@ -124,6 +131,72 @@ body {
   font-size: 18px;
   font-weight: 600;
   color: rgb(200, 225, 255);
+}
+.details-overall-con {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-y: hidden;
+  text-align: center;
+}
+.details-container {
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 7px 17px 20px -19px rgba(0, 0, 0, 0.37);
+  background-color: rgb(255, 255, 255);
+  width: 600px;
+}
+.details-header{
+  font-size: 28px;
+  font-weight: 600;
+  margin: 20px 0;
+  color: rgb(0, 112, 243);
+}
+.details-name{
+    font-size: 22px;
+  font-weight: 500;
+  margin: 20px 0;
+  color: rgb(0, 112, 243);
+  text-transform: capitalize;
+}
+.details-description{
+    font-size: 16px;
+  font-weight: 400;
+  margin: 20px 0;
+  color: rgb(26, 30, 34);
+  text-transform: capitalize;
+}
+.details-language,
+.details-size,
+.details-visibility,
+.details-date{
+     font-size: 15px;
+  font-weight: 400;
+  margin: 20px 0;
+  color: rgb(26, 30, 34);
+  text-transform: capitalize;
+}
+.buttons {
+  display: flex;
+  gap: 3rem;
+  padding: 5rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.previous,
+.next {
+  cursor: pointer;
+  color: white;
+  background-color: rgb(0, 112, 243);
+  padding: 15px 0px;
+  border: none;
+  text-align: center;
+  border-radius: 10px;
+  width: 80px;
 }
 @media screen and (max-width: 700px) {
   .repo-container {

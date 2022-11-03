@@ -1,35 +1,29 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DetailsContext } from "./Context";
+import "../App.css";
 function Data() {
-  let { data } = useParams();
+  const { data } = useParams();
   const { repos } = useContext(DetailsContext);
 
-  // commits.
-  const [commits, setCommits] = useState([]);
-  useEffect(() => {
-    getCommits();
-  }, []);
-  const getCommits = async () => {
-    const api = await fetch(
-      "https://api.github.com/repos/Oluwasemilogo/A-simple-user-validation-page/commits",
-      {
-        method: "get",
-        headers: new Headers({
-          Authorization: "Bearer " + "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",
-          "Content-Type": "application/x-www-form-urlencoded",
-        }),
-      }
-    );
-    const data = await api.json();
-    setCommits(data);
-  };
-  console.log(commits);
+  const repo = repos.filter((rep) => rep.name === data)[0];
+  console.log(repos);
+
   return (
-    <div className="details-container">
-      <h1>Repository Details.</h1>
-      <h4>{data}</h4>
-      {/* <h4>Number of Commits:{commits.length}</h4> */}
+    <div className="details-overall-con">
+      <div className="details-container">
+        <h1 className="details-header">Repository Details.</h1>
+        <h4 className="details-name">Name:{data}</h4>
+        <p className="details-description">Description:{repo?.description}</p>
+        <p className="details-language">
+          Most Used Language :{repo.language}
+        </p>
+        <p className="details-size"> Size:{repo?.size}Kb</p>
+        <p className="details-visibility">Visibility:{repo?.visibility}</p>
+        <p className="details-date">
+          Repository was created at: {repo?.created_at}
+        </p>
+      </div>
     </div>
   );
 }
