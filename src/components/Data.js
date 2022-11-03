@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-
+import { DetailsContext } from "./Context";
 function Data() {
   let { data } = useParams();
-  console.log(data);
-  const [repos, setRepos] = useState([]);
-  useEffect(() => {
-    getRepos();
-  }, []);
+  const { repos } = useContext(DetailsContext);
 
-  const getRepos = async () => {
+  // commits.
+  const [commits, setCommits] = useState([]);
+  useEffect(() => {
+    getCommits();
+  }, []);
+  const getCommits = async () => {
     const api = await fetch(
-      "https://api.github.com/users/Oluwasemilogo/repos",
+      "https://api.github.com/repos/Oluwasemilogo/A-simple-user-validation-page/commits",
       {
         method: "get",
         headers: new Headers({
@@ -21,13 +22,14 @@ function Data() {
       }
     );
     const data = await api.json();
-    setRepos(data);
+    setCommits(data);
   };
-  console.log(repos);
+  console.log(commits);
   return (
-    <div>
-      <h1>Data of each</h1>
+    <div className="details-container">
+      <h1>Repository Details.</h1>
       <h4>{data}</h4>
+      {/* <h4>Number of Commits:{commits.length}</h4> */}
     </div>
   );
 }

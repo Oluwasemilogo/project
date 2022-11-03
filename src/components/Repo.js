@@ -1,32 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { DetailsContext } from "./Context";
 import "../App.css";
 
 function Repo() {
-  const [repos, setRepos] = useState([]);
+  const { repos } = useContext(DetailsContext);
+  // const [repos, setRepos] = useState([]);
 
-  // Fetching Repositories Data
-  useEffect(() => {
-    getRepos();
-  }, []);
+  // // Fetching Repositories Data
+  // useEffect(() => {
+  //   getRepos();
+  // }, []);
 
-  const getRepos = async () => {
-    const api = await fetch("https://api.github.com/user/repos", {
-      method: "get",
-      headers: new Headers({
-        Authorization: "Bearer " + "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",
-        "Content-Type": "application/x-www-form-urlencoded",
-      }),
-    });
+  // const getRepos = async () => {
+  //   const api = await fetch("https://api.github.com/user/repos", {
+  //     method: "get",
+  //     headers: new Headers({
+  //       Authorization: "Bearer " + "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",
+  //       "Content-Type": "application/x-www-form-urlencoded",
+  //     }),
+  //   });
 
-    const data = await api.json();
-    setRepos(data);
-  };
-  useEffect(() => {
-    console.log(repos);
-  });
-
+  //   const data = await api.json();
+  //   setRepos(data);
+  // };
+  // useEffect(() => {
+  //   console.log(repos);
+  // });
+  // Fetch language img
   return (
     <div className="repos">
       <h1 className="repo-header">Repositories</h1>
