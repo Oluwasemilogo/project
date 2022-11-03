@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import { DetailsContext } from "./Context";
+import { Link } from "react-router-dom";
+// import { DetailsContext } from "./Context";
 import "../App.css";
 import { Helmet } from "react-helmet-async";
 
 function Repo() {
-  const { repos } = useContext(DetailsContext);
+  // const { repos } = useContext(DetailsContext);
 
   const [Repos, setRepos] = useState([]);
   // const { page } = useParams();
@@ -35,8 +35,11 @@ function Repo() {
     <div className="repos">
       <Helmet>
         <title>Github Repositories</title>
-        <meta name="description" content="Github Portofolio and Repositories." />
-        <link rel="canonical" href="/"/>
+        <meta
+          name="description"
+          content="Github Portofolio and Repositories."
+        />
+        <link rel="canonical" href="/" />
       </Helmet>
       <h1 className="repo-header">Repositories</h1>
       <ul className="repo-container">

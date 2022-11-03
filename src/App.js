@@ -3,7 +3,7 @@ import Home from "./components/Home";
 import Data from "./components/Data";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
-import DetailsProvider, { DetailsContext } from "./components/Context";
+import DetailsProvider from "./components/Context";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/repos/:data" element={<Data />}></Route>
-         < Route path="*" element={<ErrorPage/>} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
     </DetailsProvider>
