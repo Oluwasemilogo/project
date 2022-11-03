@@ -12,12 +12,6 @@ function Profile() {
   const getProfile = async () => {
     const api = await fetch("https://api.github.com/users/Oluwasemilogo", {
       method: "get",
-      // headers: new Headers({
-      //   Authorization: "Bearer " + "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",
-      //   "Content-Type": "application/x-www-form-urlencoded",
-      //   "User-Agent": "request",
-      //   Accept: "application/vnd.github.v3+json",
-      // }),
     });
     const data = await api.json();
     setProfile(data);

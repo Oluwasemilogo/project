@@ -1,28 +1,18 @@
 import React, {  useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import { DetailsContext } from "./Context";
 import "../App.css";
 import { Helmet } from "react-helmet-async";
 
 function Repo() {
-  // const { repos } = useContext(DetailsContext);
+ 
 
   const [Repos, setRepos] = useState([]);
-  // const { page } = useParams();
-  // console.log(page);
+
 
   const getRepos = async (val) => {
     const reps = await fetch(
       `https://api.github.com/users/Oluwasemilogo/repos?per_page=8&page=${val}`,
-      {
-        // method: "get",
-        // headers: new Headers({
-        //   Authorization: "Bearer " + "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",
-        //   "Content-Type": "application/x-www-form-urlencoded",
-        //   "User-Agent": "request",
-        //   Accept: "application/vnd.github.v3+json",
-        // }),
-      }
+      
     );
     const data = await reps.json();
     setRepos(data);
