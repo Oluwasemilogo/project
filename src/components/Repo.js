@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { DetailsContext } from "./Context";
 import "../App.css";
+import { Helmet } from "react-helmet-async";
 
 function Repo() {
   const { repos } = useContext(DetailsContext);
@@ -32,6 +33,11 @@ function Repo() {
   }, []);
   return (
     <div className="repos">
+      <Helmet>
+        <title>Github Repositories</title>
+        <meta name="description" content="Github Portofolio and Repositories." />
+        <link rel="canonical" href="/"/>
+      </Helmet>
       <h1 className="repo-header">Repositories</h1>
       <ul className="repo-container">
         {Repos[0] &&
@@ -57,12 +63,15 @@ function Repo() {
               </li>
             </Link>
           ))}
-        
       </ul>
-        <div className="buttons">
-        <button  onClick={() => getRepos(1)} className="previous">Previous</button>
-          <button onClick={() => getRepos(2)} className="next">Next</button>
-        </div>
+      <div className="buttons">
+        <button onClick={() => getRepos(1)} className="previous">
+          Previous
+        </button>
+        <button onClick={() => getRepos(2)} className="next">
+          Next
+        </button>
+      </div>
     </div>
   );
 }

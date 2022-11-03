@@ -140,6 +140,7 @@ body {
   flex-direction: column;
   overflow-y: hidden;
   text-align: center;
+  background-color:#f8f9fa;
 }
 .details-container {
   padding: 3rem;
@@ -148,6 +149,7 @@ body {
   background-color: rgb(255, 255, 255);
   width: 600px;
 }
+
 .details-header{
   font-size: 28px;
   font-weight: 600;
@@ -198,9 +200,48 @@ body {
   border-radius: 10px;
   width: 80px;
 }
+.error{
+  margin: 20px 0;
+  font-size: 40px;
+  font-weight: 800;
+}
+.not-found{
+  margin: 20px 0;
+  font-size: 30px;
+  font-weight: 600
+}
+.error-container{
+  margin-top: 6rem;
+  padding: 5rem;
+  text-align: center;
+}
+.error-button{
+  margin: 30px 0;
+   cursor: pointer;
+  color: white;
+  background-color: rgb(0, 112, 243);
+  padding: 20px 20px;
+  border: none;
+  text-align: center;
+  border-radius: 10px;
+  width: 200px;
+
+}
 @media screen and (max-width: 700px) {
   .repo-container {
     display: flex;
     flex-direction: column;
   }
+  .profile-name {
+  text-align: center;
+}
+.username {
+text-align: center;
+}
+.bio {
+  text-align: center;
+}
+.details-name{
+  font-size: 15px;
+}
 }

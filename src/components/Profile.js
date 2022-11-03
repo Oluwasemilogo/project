@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
+import { Helmet } from "react-helmet-async";
 
 function Profile() {
   const [profile, setProfile] = useState([]);
@@ -24,6 +25,14 @@ function Profile() {
   console.log(profile);
   return (
     <div className="profile-container">
+      <Helmet>
+        <title>Github Portofolio</title>
+        <meta
+          name="description"
+          content="Github Portofolio and Repositories."
+        />
+        <link rel="canonical" href="/" />
+      </Helmet>
       <img src={profile.avatar_url} alt="profile" className="avatar" />
       <h1 className="profile-name">{profile.name}</h1>
       <h3 className="username">@{profile.login}</h3>

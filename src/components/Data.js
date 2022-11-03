@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DetailsContext } from "./Context";
 import "../App.css";
@@ -15,9 +15,7 @@ function Data() {
         <h1 className="details-header">Repository Details.</h1>
         <h4 className="details-name">Name:{data}</h4>
         <p className="details-description">Description:{repo?.description}</p>
-        <p className="details-language">
-          Most Used Language :{repo.language}
-        </p>
+        <p className="details-language">Most Used Language :{repo?.language}</p>
         <p className="details-size"> Size:{repo?.size}Kb</p>
         <p className="details-visibility">Visibility:{repo?.visibility}</p>
         <p className="details-date">

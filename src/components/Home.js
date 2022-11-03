@@ -1,12 +1,15 @@
 import React from "react";
 import Profile from "./Profile";
 import Repo from "./Repo";
+import ErrorBoundary from "../ErrorBoundary";
 
 function Home() {
   return (
     <>
-      <Profile />
-      <Repo />
+      <ErrorBoundary>
+        <Profile />
+        <Repo />
+      </ErrorBoundary>
     </>
   );
 }
